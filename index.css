@@ -1,0 +1,100 @@
+:root {
+    --bg: #faf8f5;
+    --bg-alt: #f2eee8;
+    --surface: #ffffff;
+    --text: #2b2622;
+    --text-muted: #6f665e;
+    --border: #e4ddd4;
+    --accent: #a47551;
+    --accent-strong: #8a5f3f;
+    --accent-soft: #f3ebe2;
+    --code-bg: #2b2622;
+    --shadow: 0 1px 2px rgba(43, 38, 34, .05), 0 8px 24px rgba(43, 38, 34, .07);
+    --radius: 14px;
+    --header-h: 68px;
+    --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161412;
+    --bg-alt: #1d1a17;
+    --surface: #24201c;
+    --text: #ece6df;
+    --text-muted: #a89f96;
+    --border: #35302a;
+    --accent: #c9a27e;
+    --accent-strong: #dbbd9f;
+    --accent-soft: rgba(201, 162, 126, .14);
+    --code-bg: #0f0e0c;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+  }
+}
+
+
+:root[data-theme="dark"] {
+  --bg: #161412;
+  --bg-alt: #1d1a17;
+  --surface: #24201c;
+  --text: #ece6df;
+  --text-muted: #a89f96;
+  --border: #35302a;
+  --accent: #c9a27e;
+  --accent-strong: #dbbd9f;
+  --accent-soft: rgba(201, 162, 126, .14);
+  --code-bg: #0f0e0c;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+}
+
+
+*, *::before, *::after { box-sizing: border-box; }
+
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
+  -webkit-text-size-adjust: 100%;
+}
+
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color .3s, color .3s;
+}
+
+h1, h2, h3 { line-height: 1.2; margin: 0; letter-spacing: -.02em; }
+p { margin: 0 0 1em; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+img { max-width: 100%; display: block; }
+
+.container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.accent { color: var(--accent); }
+.muted { color: var(--text-muted); }
+
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 8px;
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  z-index: 200;
+}
